@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+    :root {
+        --main-background: hsl(222, 26%, 31%);
+        --toggle-background: hsl(223, 31%, 20%);
+        --key-toggle-background: hsl(6, 63%, 50%);
+        --screen-background: hsl(224, 36%, 15%);
+        --key-clean-input-background: hsl(225, 21%, 49%);
+        --key-clean-input-shadow: hsl(224, 28%, 35%);
+        --key-background: hsl(30, 25%, 89%);
+        --key-shadow: hsl(28, 16%, 65%);
+        --key-background-equal: hsl(6, 63%, 50%);
+        --key-background-equal-shadow: hsl(6, 70%, 34%);
+      }
+    @font-face {
+        font-family: 'LeagueSpartan';
+        font-weight: 700;
+        src: url('./../fonts/LeagueSpartan-Medium.ttf')format('TrueType');
+    }
+    body{
+        @apply text-3xl;
+    }
+}
+@layer components {
+    .theme-switch{
+        @apply rounded-xl bg-toggle-background w-14 p-1 after:bg-key-toggle-background after:w-3 after:h-3 after:block after:cursor-pointer after:rounded-full;
+    }
+    .effect-button{
+        @apply border-b-4;
+    }
+    .effect-button:active{
+        @apply border-b-0 border-t-4 border-transparent;
+    }
+    .key-button{
+        @apply text-4xl flex items-center justify-center font-black bg-key-background rounded-lg p-3 text-center cursor-pointer border-key-shadow hover:bg-white max-mobile:text-2xl;
+    }
+    .delete-button{
+        @apply bg-key-clean-input-background flex items-center justify-center text-white text-2xl font-black rounded-lg p-3 text-center cursor-pointer border-key-clean-input-shadow hover:brightness-125 max-mobile:text-xl;
+    }
+    .reset-button{
+        @apply bg-key-clean-input-background flex items-center justify-center text-white text-2xl font-black rounded-lg p-3 text-center cursor-pointer border-key-clean-input-shadow hover:brightness-125 max-mobile:text-xl;
+    }
+    .equal-button{
+        @apply bg-key-background-equal flex items-center justify-center text-white text-2xl font-black rounded-lg p-3 text-center cursor-pointer border-key-background-equal-shadow hover:brightness-125 max-mobile:text-xl;
+    }
+}

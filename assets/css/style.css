@@ -444,6 +444,32 @@ video {
   display: none;
 }
 
+:root {
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-background: hsl(223, 31%, 20%);
+  --key-toggle-background: hsl(6, 63%, 50%);
+  --screen-background: hsl(224, 36%, 15%);
+  --key-clean-input-background: hsl(225, 21%, 49%);
+  --key-clean-input-shadow: hsl(224, 28%, 35%);
+  --key-background: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+  --key-background-equal: hsl(6, 63%, 50%);
+  --key-background-equal-shadow: hsl(6, 70%, 34%);
+}
+
+@font-face {
+  font-family: 'LeagueSpartan';
+
+  font-weight: 700;
+
+  src: url('./../fonts/LeagueSpartan-Medium.ttf')format('TrueType');
+}
+
+body {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -544,15 +570,276 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.theme-switch {
+  width: 3.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--toggle-background);
+  padding: 0.25rem;
+}
+
+.theme-switch::after {
+  display: block;
+  height: 0.75rem;
+  width: 0.75rem;
+  cursor: pointer;
+  border-radius: 9999px;
+  content: var(--tw-content);
+  background-color: var(--key-toggle-background);
+}
+
+.effect-button {
+  border-bottom-width: 4px;
+}
+
+.effect-button:active {
+  border-bottom-width: 0px;
+  border-top-width: 4px;
+  border-color: transparent;
+}
+
+.key-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border-color: var(--key-shadow);
+  background-color: var(--key-background);
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 900;
+}
+
+.key-button:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+@media not all and (min-width: 400.1px) {
+  .key-button {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.delete-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border-color: var(--key-clean-input-shadow);
+  background-color: var(--key-clean-input-background);
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 900;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.delete-button:hover {
+  --tw-brightness: brightness(1.25);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media not all and (min-width: 400.1px) {
+  .delete-button {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+.reset-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border-color: var(--key-clean-input-shadow);
+  background-color: var(--key-clean-input-background);
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 900;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.reset-button:hover {
+  --tw-brightness: brightness(1.25);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media not all and (min-width: 400.1px) {
+  .reset-button {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+.equal-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border-color: var(--key-background-equal-shadow);
+  background-color: var(--key-background-equal);
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 900;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.equal-button:hover {
+  --tw-brightness: brightness(1.25);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media not all and (min-width: 400.1px) {
+  .equal-button {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.bg-main-background {
+  background-color: var(--main-background);
+}
+
+.bg-screen-background {
+  background-color: var(--screen-background);
+}
+
+.bg-toggle-background {
+  background-color: var(--toggle-background);
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.font-LeagueSpartan {
+  font-family: LeagueSpartan;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-bold {
   font-weight: 700;
 }
 
-.underline {
-  text-decoration-line: underline;
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media not all and (min-width: 400.1px) {
+  .max-mobile\:p-1 {
+    padding: 0.25rem;
+  }
+
+  .max-mobile\:p-2 {
+    padding: 0.5rem;
+  }
+
+  .max-mobile\:p-4 {
+    padding: 1rem;
+  }
 }

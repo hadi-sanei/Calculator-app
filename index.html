@@ -7,7 +7,83 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Frontend Mentor | Calculator app</title>
 </head>
-<body>
-  
+<body class="font-LeagueSpartan bg-main-background">
+  <main class="flex items-center justify-center h-screen">
+    <section class="max-w-xl w-full p-3 max-mobile:p-1">
+      <header class="flex justify-between items-center text-white">
+        <span class="font-bold text-xl">cal</span>
+        <div class="flex items-center gap-5">
+          <span class="text-xs">THEME</span>
+          <div class="flex flex-col items-center">
+            <ul class="flex gap-3 text-sm">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+            </ul>
+            <div class="theme-switch"></div>
+          </div>
+        </div>
+      </header>
+      <section>
+        <input type="text" name=""  id="" class="text-white text-3xl bg-screen-background p-6 rounded-lg w-full my-3 outline-none max-mobile:p-4" readonly>
+      </section>
+      <section class="grid grid-cols-4 gap-3 rounded-lg bg-toggle-background p-6 max-mobile:p-2">
+        <section class="key-button effect-button">
+          <span>7</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>8</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>9</span>
+        </section>
+        <section class="delete-button effect-button">
+          <span>DEL</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>4</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>5</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>6</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>+</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>1</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>2</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>3</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>-</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>.</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>0</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>/</span>
+        </section>
+        <section class="key-button effect-button">
+          <span>⨯</span>
+        </section>
+        <section class="col-span-2 reset-button effect-button">
+          <span>RESET</span>
+        </section>
+        <section class="col-span-2 equal-button effect-button">
+          <span>=</span>
+        </section>
+      </section>
+    </section>
+  </main>
 </body>
 </html>
