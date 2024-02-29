@@ -455,6 +455,9 @@ video {
   --key-shadow: hsl(28, 16%, 65%);
   --key-background-equal: hsl(6, 63%, 50%);
   --key-background-equal-shadow: hsl(6, 70%, 34%);
+  --text:hsl(0, 0%, 100%);
+  --text-key:hsl(221, 14%, 31%);
+  --text-header: hsl(0, 0%, 100%);
 }
 
 @font-face {
@@ -570,11 +573,16 @@ body {
   --tw-backdrop-sepia:  ;
 }
 
+/* box-switch */
+
 .theme-switch {
   width: 3.5rem;
   border-radius: 0.75rem;
   background-color: var(--toggle-background);
   padding: 0.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .theme-switch::after {
@@ -583,9 +591,62 @@ body {
   width: 0.75rem;
   cursor: pointer;
   border-radius: 9999px;
-  content: var(--tw-content);
   background-color: var(--key-toggle-background);
+  content: var(--tw-content);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
+
+input[name='switch']{
+  display: none;
+}
+
+body:has(.theme-switch>#theme-two:checked){
+  --main-background:hsl(0, 0%, 90%);
+  --toggle-background:hsl(0, 5%, 81%);
+  --key-toggle-background:hsl(25, 98%, 40%);
+  --screen-background:hsl(0, 0%, 93%);
+  --key-clean-input-background:hsl(185, 42%, 37%);
+  --key-clean-input-shadow:hsl(185, 58%, 25%);
+  --key-background:hsl(45, 7%, 89%);
+  --key-shadow:hsl(35, 11%, 61%);
+  --key-background-equal:hsl(25, 98%, 40%);
+  --key-background-equal-shadow:hsl(25, 99%, 27%);
+  --text:hsl(0, 0%, 100%);
+  --text-key:hsl(60, 10%, 19%);
+  --text-header:hsl(60, 10%, 19%);
+}
+
+body:has(.theme-switch>#theme-three:checked){
+  --main-background:hsl(268, 75%, 9%);
+  --toggle-background:hsl(268, 71%, 12%);
+  --key-toggle-background:hsl(176, 100%, 44%);
+  --screen-background:hsl(268, 71%, 12%);
+  --key-clean-input-background:hsl(281, 89%, 26%);
+  --key-clean-input-shadow:hsl(285, 91%, 52%);
+  --key-background:hsl(268, 47%, 21%);
+  --key-shadow:hsl(290, 70%, 36%);
+  --key-background-equal:hsl(176, 100%, 44%);
+  --key-background-equal-shadow:hsl(177, 92%, 70%);
+  --text:hsl(0, 0%, 100%);
+  --text-key:hsl(52, 100%, 62%);
+  --text-header:hsl(52, 100%, 62%);
+}
+
+.theme-switch:has(>#theme-one:checked)::after{
+  translate: 0;
+}
+
+.theme-switch:has(>#theme-two:checked)::after{
+  translate: 1rem;
+}
+
+.theme-switch:has(>#theme-three:checked)::after{
+  translate: 2rem;
+}
+
+/* End box-switch */
 
 .effect-button {
   border-bottom-width: 4px;
@@ -610,11 +671,12 @@ body {
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 900;
+  color: var(--text-key);
 }
 
 .key-button:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-brightness: brightness(1.1);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @media not all and (min-width: 400.1px) {
@@ -740,6 +802,10 @@ body {
   max-width: 36rem;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -820,14 +886,23 @@ body {
   font-weight: 700;
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+.text-\[--text-header\] {
+  color: var(--text-header);
 }
 
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
 }
 
 @media not all and (min-width: 400.1px) {

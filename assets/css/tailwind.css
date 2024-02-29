@@ -13,6 +13,9 @@
         --key-shadow: hsl(28, 16%, 65%);
         --key-background-equal: hsl(6, 63%, 50%);
         --key-background-equal-shadow: hsl(6, 70%, 34%);
+        --text:hsl(0, 0%, 100%);
+        --text-key:hsl(221, 14%, 31%);
+        --text-header: hsl(0, 0%, 100%);
       }
     @font-face {
         font-family: 'LeagueSpartan';
@@ -24,9 +27,54 @@
     }
 }
 @layer components {
+    /* box-switch */
     .theme-switch{
-        @apply rounded-xl bg-toggle-background w-14 p-1 after:bg-key-toggle-background after:w-3 after:h-3 after:block after:cursor-pointer after:rounded-full;
+        @apply rounded-xl bg-toggle-background w-14 p-1 transition-all after:bg-key-toggle-background after:w-3 after:h-3 after:transition-all after:block after:cursor-pointer after:rounded-full;
     }
+    input[name='switch']{
+        display: none;
+    }
+    body:has(.theme-switch>#theme-two:checked){
+        --main-background:hsl(0, 0%, 90%);
+        --toggle-background:hsl(0, 5%, 81%);
+        --key-toggle-background:hsl(25, 98%, 40%);
+        --screen-background:hsl(0, 0%, 93%);
+        --key-clean-input-background:hsl(185, 42%, 37%);
+        --key-clean-input-shadow:hsl(185, 58%, 25%);
+        --key-background:hsl(45, 7%, 89%);
+        --key-shadow:hsl(35, 11%, 61%);
+        --key-background-equal:hsl(25, 98%, 40%);
+        --key-background-equal-shadow:hsl(25, 99%, 27%);
+        --text:hsl(0, 0%, 100%);
+        --text-key:hsl(60, 10%, 19%);
+        --text-header:hsl(60, 10%, 19%);
+    }
+    body:has(.theme-switch>#theme-three:checked){
+        --main-background:hsl(268, 75%, 9%);
+        --toggle-background:hsl(268, 71%, 12%);
+        --key-toggle-background:hsl(176, 100%, 44%);
+        --screen-background:hsl(268, 71%, 12%);
+        --key-clean-input-background:hsl(281, 89%, 26%);
+        --key-clean-input-shadow:hsl(285, 91%, 52%);
+        --key-background:hsl(268, 47%, 21%);
+        --key-shadow:hsl(290, 70%, 36%);
+        --key-background-equal:hsl(176, 100%, 44%);
+        --key-background-equal-shadow:hsl(177, 92%, 70%);
+        --text:hsl(0, 0%, 100%);
+        --text-key:hsl(52, 100%, 62%);
+        --text-header:hsl(52, 100%, 62%);
+    }
+    .theme-switch:has(>#theme-one:checked)::after{
+        translate: 0;
+    }
+    .theme-switch:has(>#theme-two:checked)::after{
+        translate: 1rem;
+    }
+    .theme-switch:has(>#theme-three:checked)::after{
+        translate: 2rem;
+    }
+    /* End box-switch */
+
     .effect-button{
         @apply border-b-4;
     }
@@ -34,7 +82,7 @@
         @apply border-b-0 border-t-4 border-transparent;
     }
     .key-button{
-        @apply text-4xl flex items-center justify-center font-black bg-key-background rounded-lg p-3 text-center cursor-pointer border-key-shadow hover:bg-white max-mobile:text-2xl;
+        @apply text-4xl flex items-center justify-center font-black bg-key-background rounded-lg p-3 text-center text-[--text-key] cursor-pointer border-key-shadow hover:brightness-110 max-mobile:text-2xl;
     }
     .delete-button{
         @apply bg-key-clean-input-background flex items-center justify-center text-white text-2xl font-black rounded-lg p-3 text-center cursor-pointer border-key-clean-input-shadow hover:brightness-125 max-mobile:text-xl;

@@ -5,28 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/tailwind.css">
   <title>Frontend Mentor | Calculator app</title>
 </head>
-<body class="font-LeagueSpartan bg-main-background">
+<body class="font-LeagueSpartan bg-main-background transition-all duration-300">
   <main class="flex items-center justify-center h-screen">
     <section class="max-w-xl w-full p-3 max-mobile:p-1">
-      <header class="flex justify-between items-center text-white">
-        <span class="font-bold text-xl">cal</span>
-        <div class="flex items-center gap-5">
-          <span class="text-xs">THEME</span>
-          <div class="flex flex-col items-center">
-            <ul class="flex gap-3 text-sm">
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-            </ul>
-            <div class="theme-switch"></div>
+      <header class="text-[--text-header]">
+        <section class="flex justify-between items-center ">
+          <span class="font-bold text-xl">cal</span>
+          <div class="flex items-center gap-5">
+            <span class="text-xs">THEME</span>
+            <div class="flex flex-col items-center">
+              <ul class="flex gap-3 text-sm">
+                <li><label for="theme-one" class="cursor-pointer">1</label></li>
+                <li><label for="theme-two" class="cursor-pointer">2</label></li>
+                <li><label for="theme-three" class="cursor-pointer">3</label></li>
+              </ul>
+              <div id="theme-switch" class="theme-switch">
+                <input type="radio" name="switch" id="theme-one">
+                <input type="radio" name="switch" id="theme-two">
+                <input type="radio" name="switch" id="theme-three">
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
+        <section>
+          <input type="text" name=""  id="" class="text-3xl bg-screen-background p-6 rounded-lg w-full my-3 outline-none max-mobile:p-4" readonly>
+        </section>
       </header>
-      <section>
-        <input type="text" name=""  id="" class="text-white text-3xl bg-screen-background p-6 rounded-lg w-full my-3 outline-none max-mobile:p-4" readonly>
-      </section>
+     
       <section class="grid grid-cols-4 gap-3 rounded-lg bg-toggle-background p-6 max-mobile:p-2">
         <section class="key-button effect-button">
           <span>7</span>
@@ -86,4 +94,5 @@
     </section>
   </main>
 </body>
+<script src="./assets/js/cod.js"></script>
 </html>
