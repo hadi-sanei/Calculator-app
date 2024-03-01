@@ -1,4 +1,9 @@
 let themeSwitches: NodeListOf <HTMLInputElement>=document.querySelectorAll('.theme-switch > input');
+let showCalculate=document.getElementById('show-calculate') as HTMLInputElement;
+let keyButtons=document.querySelectorAll('.key-button');
+let resetButton=document.querySelector('.reset-button') as HTMLElement;
+let deleteButton=document.querySelector('.delete-button') as HTMLElement;
+let equalButton=document.querySelector('.equal-button') as HTMLElement;
 function getCookie(name:string):string{
     let cookiesArray:string[]= document.cookie.split(';');
     let mainCookie:string|undefined;
@@ -22,3 +27,10 @@ themeSwitches.forEach(themeSwitch=>{
         }
     });
 });
+
+keyButtons.forEach(keyButton=>{
+    keyButton.addEventListener('click',(e)=>{
+        showCalculate.value+=keyButton.textContent?.trim();
+    });
+});
+
