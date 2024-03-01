@@ -33,3 +33,9 @@ keyButtons.forEach(keyButton => {
         showCalculate.value += (_a = keyButton.textContent) === null || _a === void 0 ? void 0 : _a.trim();
     });
 });
+deleteButton.addEventListener('click', () => {
+    showCalculate.value = showCalculate.value.slice(0, -1);
+});
+resetButton.addEventListener('click', () => {
+    showCalculate.value = '';
+});

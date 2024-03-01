@@ -34,3 +34,10 @@ keyButtons.forEach(keyButton=>{
     });
 });
 
+deleteButton.addEventListener('click',()=>{
+    showCalculate.value=showCalculate.value.slice(0,-1);
+});
+
+resetButton.addEventListener('click',()=>{
+    showCalculate.value='';
+});
