@@ -33,6 +33,18 @@ keyButtons.forEach(keyButton => {
         showCalculate.value += (_a = keyButton.textContent) === null || _a === void 0 ? void 0 : _a.trim();
     });
 });
+equalButton.addEventListener('click', () => {
+    let calculate = showCalculate.value;
+    if (showCalculate.value.includes('⨯')) {
+        calculate = showCalculate.value.replace('⨯', '*');
+    }
+    try {
+        showCalculate.value = eval(calculate);
+    }
+    catch (_a) {
+        alert('The entered value is invalid!');
+    }
+});
 deleteButton.addEventListener('click', () => {
     showCalculate.value = showCalculate.value.slice(0, -1);
 });
